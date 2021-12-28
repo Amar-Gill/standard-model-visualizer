@@ -15,7 +15,7 @@ export default function Particle(props) {
     triangle.lineTo(shapeLength, -shapeLength);
     triangle.lineTo(0, 0);
 
-    const ring = useRef();
+    const ring = useRef(null);
 
     useFrame(() => {
         ring.current.rotation.y += props.flipped ? 0.01 : -0.01;
