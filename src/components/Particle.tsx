@@ -11,7 +11,13 @@ type ParticleProps = {
   particleColor?: ParticleColors;
 } & JSX.IntrinsicElements['group'];
 
-export default function Particle(props: ParticleProps) {
+export default function Particle({
+  particleColor = ParticleColors.UpQuark,
+  showArrow = false,
+  showRing = false,
+  flipped = false,
+  ...props
+}: ParticleProps) {
   const arrowDir = new Vector3(0, 1, 0);
   arrowDir.normalize();
   const arrowOrigin = new Vector3(0, 0, 0);
@@ -27,25 +33,20 @@ export default function Particle(props: ParticleProps) {
   const ring = useRef<Mesh>(null!);
 
   useFrame(() => {
-    ring.current.rotation.y += props.flipped ? 0.01 : -0.01;
+    ring.current.rotation.y += flipped ? 0.01 : -0.01;
   });
-
-  const particleColor = props.particleColor ?? ParticleColors.UpQuark;
 
   return (
     <group {...props}>
       <arrowHelper
-        visible={!!props.showArrow}
+        visible={showArrow}
         args={[arrowDir, arrowOrigin, arrowLength, 'white']}
       />
       <mesh>
         <sphereGeometry args={[2, 32, 32]} />
         <meshStandardMaterial color={particleColor} />
       </mesh>
-      <group
-        ref={ring}
-        visible={!!props.showRing}
-        rotation={[0, 0, props.flipped ? Math.PI : 0]}>
+      <group ref={ring} visible={showRing} rotation={[0, 0, flipped ? Math.PI : 0]}>
         <mesh>
           <cylinderGeometry args={[3, 3, 0.1, 64, 4, true]} />
           <meshStandardMaterial side={DoubleSide} color={'white'} />
