@@ -1,8 +1,14 @@
-import { useFrame } from '@react-three/fiber';
+import { extend, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import { DoubleSide, Shape, Vector3 } from 'three';
+import { DoubleSide, Mesh, Shape, Vector3 } from 'three';
 
-export default function Particle(props) {
+type ParticleProps = {
+  showArrow?: boolean;
+  showRing?: boolean;
+  flipped?: boolean;
+} & JSX.IntrinsicElements['group'];
+
+export default function Particle(props: ParticleProps) {
   const arrowDir = new Vector3(0, 1, 0);
   arrowDir.normalize();
   const arrowOrigin = new Vector3(0, 0, 0);
@@ -15,7 +21,7 @@ export default function Particle(props) {
   triangle.lineTo(shapeLength, -shapeLength);
   triangle.lineTo(0, 0);
 
-  const ring = useRef(null);
+  const ring = useRef<Mesh>(null!);
 
   useFrame(() => {
     ring.current.rotation.y += props.flipped ? 0.01 : -0.01;
@@ -50,4 +56,14 @@ export default function Particle(props) {
       </group>
     </group>
   );
+}
+
+extend({ Particle });
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      Particle: ParticleProps;
+    }
+  }
 }
