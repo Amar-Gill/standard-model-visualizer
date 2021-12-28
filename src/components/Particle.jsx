@@ -1,4 +1,6 @@
-import { Vector3, DoubleSide, Shape } from "three"
+import { Vector3, DoubleSide, Shape } from "three";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 export default function Particle(props) {
     const arrowDir = new Vector3(0, 1, 0);
@@ -13,6 +15,12 @@ export default function Particle(props) {
     triangle.lineTo(shapeLength, -shapeLength);
     triangle.lineTo(0, 0);
 
+    const ring = useRef();
+
+    useFrame(() => {
+        ring.current.rotation.y += props.flipped ? 0.01 : -0.01;
+    });
+
     return (
         <group {...props}>
             <arrowHelper visible={!!props.showArrow} args={[arrowDir, arrowOrigin, arrowLength, "black"]} />
@@ -20,7 +28,7 @@ export default function Particle(props) {
                 <sphereGeometry args={[2, 32, 32]} />
                 <meshStandardMaterial />
             </mesh>
-            <group visible={!!props.showRing} rotation={[0, 0, !!props.flipped ? Math.PI : 0]}>
+            <group ref={ring} visible={!!props.showRing} rotation={[0, 0, !!props.flipped ? Math.PI : 0]}>
                 <mesh>
                     <cylinderGeometry args={[3, 3, 0.1, 64, 4, true]} />
                     <meshStandardMaterial side={DoubleSide} />

@@ -13,7 +13,7 @@ export default function App() {
           <boxGeometry args={[2, 2, 2]} />
           <meshStandardMaterial />
         </mesh>
-        <Particle showRing showArrow/>
+        <Particle showRing showArrow />
         <gridHelper args={[20,40]} />
       </Canvas>
     </div>
