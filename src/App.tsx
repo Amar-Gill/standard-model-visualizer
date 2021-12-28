@@ -1,10 +1,11 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Particle from "./components/Particle";
+import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+
+import Particle from './components/Particle';
 
 export default function App() {
   return (
-    <div style={{width: '100%', height: '100%'}} id="#canvas-container">
+    <div style={{ width: '100%', height: '100%' }} id="#canvas-container">
       <Canvas orthographic>
         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
         <ambientLight intensity={0.1} />
@@ -14,7 +15,7 @@ export default function App() {
           <meshStandardMaterial />
         </mesh>
         <Particle showRing showArrow />
-        <gridHelper args={[20,40]} />
+        <gridHelper args={[20, 40]} />
       </Canvas>
     </div>
   );
