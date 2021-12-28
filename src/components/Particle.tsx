@@ -2,7 +2,7 @@ import { extend, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { DoubleSide, Mesh, Shape, Vector3 } from 'three';
 
-import { ParticleColors } from './types/particles';
+import { ParticleColors } from '@/components/@types';
 
 type ParticleProps = {
   showArrow?: boolean;

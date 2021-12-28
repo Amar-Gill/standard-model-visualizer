@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
-import Particle from './components/Particle';
+import Particle from '@/components/Particle';
 
 export default function App() {
   return (
