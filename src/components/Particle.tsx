@@ -1,6 +1,7 @@
+import { Line } from '@react-three/drei';
 import { extend, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import { DoubleSide, Mesh, Shape, Vector3 } from 'three';
+import { DoubleSide, Mesh, Vector3 } from 'three';
 
 import { ParticleColors } from '@/components/@types';
 
@@ -23,13 +24,6 @@ export default function Particle({
   const arrowOrigin = new Vector3(0, 0, 0);
   const arrowLength = 3;
 
-  const shapeLength = 0.4;
-  const triangle = new Shape();
-  triangle.moveTo(0, 0);
-  triangle.lineTo(shapeLength, shapeLength);
-  triangle.lineTo(shapeLength, -shapeLength);
-  triangle.lineTo(0, 0);
-
   const ring = useRef<Mesh>(null!);
 
   useFrame(() => {
@@ -48,17 +42,31 @@ export default function Particle({
       </mesh>
       <group ref={ring} visible={showRing} rotation={[0, 0, flipped ? Math.PI : 0]}>
         <mesh>
-          <cylinderGeometry args={[3, 3, 0.1, 64, 4, true]} />
+          <cylinderGeometry args={[3, 3, 0.06, 64, 4, true]} />
           <meshStandardMaterial side={DoubleSide} color={'white'} />
         </mesh>
-        <mesh position={[0, 0, 3]}>
-          <shapeGeometry args={[triangle]} />
-          <meshStandardMaterial side={DoubleSide} color={'white'} />
-        </mesh>
-        <mesh position={[0, 0, -3]} rotation={[0, 0, Math.PI]}>
-          <shapeGeometry args={[triangle]} />
-          <meshStandardMaterial side={DoubleSide} color={'white'} />
-        </mesh>
+        <Line
+          points={[
+            [0, 0, 1.5],
+            [0.4, 0.4, 1.5],
+            [0, 0, 1.5],
+            [0.4, -0.4, 1.5],
+          ]}
+          lineWidth={2}
+          position={[0, 0, 1.5]}
+          color={'white'}
+        />
+        <Line
+          points={[
+            [0, 0, -1.5],
+            [-0.4, 0.4, -1.5],
+            [0, 0, -1.5],
+            [-0.4, -0.4, -1.5],
+          ]}
+          lineWidth={2}
+          position={[0, 0, -1.5]}
+          color={'white'}
+        />
       </group>
     </group>
   );
