@@ -10,6 +10,7 @@ type ParticleProps = {
   showRing?: boolean;
   flipped?: boolean;
   particleColor?: ParticleColors;
+  radius?: number;
 } & JSX.IntrinsicElements['group'];
 
 export default function Particle({
@@ -17,12 +18,16 @@ export default function Particle({
   showArrow = false,
   showRing = false,
   flipped = false,
+  radius = 2,
   ...props
 }: ParticleProps) {
+  const ringRadius = radius * 1.5;
+  const lineLength = radius * 0.2;
+  const cylinderHeight = radius * 0.03;
+
   const arrowDir = new Vector3(0, 1, 0);
   arrowDir.normalize();
   const arrowOrigin = new Vector3(0, 0, 0);
-  const arrowLength = 3;
 
   const ring = useRef<Mesh>(null!);
 
@@ -34,37 +39,37 @@ export default function Particle({
     <group {...props}>
       <arrowHelper
         visible={showArrow}
-        args={[arrowDir, arrowOrigin, arrowLength, 'white']}
+        args={[arrowDir, arrowOrigin, ringRadius, 'white']}
       />
       <mesh>
-        <sphereGeometry args={[2, 32, 32]} />
+        <sphereGeometry args={[radius, 32, 32]} />
         <meshStandardMaterial color={particleColor} />
       </mesh>
       <group ref={ring} visible={showRing} rotation={[0, 0, flipped ? Math.PI : 0]}>
         <mesh>
-          <cylinderGeometry args={[3, 3, 0.06, 64, 4, true]} />
+          <cylinderGeometry
+            args={[ringRadius, ringRadius, cylinderHeight, 64, 4, true]}
+          />
           <meshStandardMaterial side={DoubleSide} color={'white'} />
         </mesh>
         <Line
           points={[
-            [0, 0, 1.5],
-            [0.4, 0.4, 1.5],
-            [0, 0, 1.5],
-            [0.4, -0.4, 1.5],
+            [0, 0, ringRadius],
+            [lineLength, lineLength, ringRadius],
+            [0, 0, ringRadius],
+            [lineLength, -lineLength, ringRadius],
           ]}
-          lineWidth={2}
-          position={[0, 0, 1.5]}
+          lineWidth={radius}
           color={'white'}
         />
         <Line
           points={[
-            [0, 0, -1.5],
-            [-0.4, 0.4, -1.5],
-            [0, 0, -1.5],
-            [-0.4, -0.4, -1.5],
+            [0, 0, -ringRadius],
+            [-lineLength, lineLength, -ringRadius],
+            [0, 0, -ringRadius],
+            [-lineLength, -lineLength, -ringRadius],
           ]}
-          lineWidth={2}
-          position={[0, 0, -1.5]}
+          lineWidth={radius}
           color={'white'}
         />
       </group>
