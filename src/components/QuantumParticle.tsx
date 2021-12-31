@@ -3,24 +3,24 @@ import { extend, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { DoubleSide, Mesh, Vector3 } from 'three';
 
-import { ParticleColors } from '@/components/@types';
+import { QuantumParticleColors } from '@/components/@types';
 
-type ParticleProps = {
+type QuantumParticleProps = {
   showArrow?: boolean;
   showRing?: boolean;
   flipped?: boolean;
-  particleColor?: ParticleColors;
+  particleColor?: QuantumParticleColors;
   radius?: number;
 } & JSX.IntrinsicElements['group'];
 
-export default function Particle({
-  particleColor = ParticleColors.UpQuark,
+export default function QuantumParticle({
+  particleColor = QuantumParticleColors.UpQuark,
   showArrow = false,
   showRing = false,
   flipped = false,
   radius = 2,
   ...props
-}: ParticleProps) {
+}: QuantumParticleProps) {
   const ringRadius = radius * 1.5;
   const lineLength = radius * 0.2;
   const cylinderHeight = radius * 0.03;
@@ -77,12 +77,12 @@ export default function Particle({
   );
 }
 
-extend({ Particle });
+extend({ QuantumParticle });
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      Particle: ParticleProps;
+      QuantumParticle: QuantumParticleProps;
     }
   }
 }

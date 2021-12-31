@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
-import Particle from '@/components/Particle';
+import QuantumParticle from '@/components/QuantumParticle';
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
         <ambientLight intensity={0.1} color={'white'} />
         <directionalLight color="white" position={[0, 5, 5]} />
-        <Particle showRing showArrow />
+        <QuantumParticle showRing showArrow />
         <gridHelper args={[20, 40]} />
       </Canvas>
     </div>

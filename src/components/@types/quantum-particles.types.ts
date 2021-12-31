@@ -1,4 +1,4 @@
-export enum ParticleColors {
+export enum QuantumParticleColors {
   UpQuark = '#4ab1e4',
   CharmQuark = '#4ab1e4',
   TopQuark = '#4ab1e4',

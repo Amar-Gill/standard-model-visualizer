@@ -1,1 +1,1 @@
-export * from './particles.types';
+export * from './quantum-particles.types';
