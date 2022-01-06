@@ -24,6 +24,7 @@ export default function QuantumParticle({
   const ringRadius = radius * 1.5;
   const lineLength = radius * 0.2;
   const cylinderHeight = radius * 0.03;
+  const ringRotationRad = flipped ? 0.01 : -0.01;
 
   const arrowDir = new Vector3(0, 1, 0);
   arrowDir.normalize();
@@ -32,7 +33,7 @@ export default function QuantumParticle({
   const ring = useRef<Mesh>(null!);
 
   useFrame(() => {
-    ring.current.rotation.y += flipped ? 0.01 : -0.01;
+    ring.current.rotation.y += ringRotationRad;
   });
 
   return (
