@@ -2,14 +2,7 @@ export default function PageContent() {
   return (
     <div
       style={{
-        zIndex: 10,
         color: 'white',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        height: '100%',
-        width: '100%',
-        overflowY: 'scroll',
       }}>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
