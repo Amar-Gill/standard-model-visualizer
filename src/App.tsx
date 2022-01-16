@@ -20,7 +20,7 @@ export default function App() {
       <color attach="background" args={['#0e1a2d']} />
       <ambientLight intensity={0.1} color="white" />
       <directionalLight color="white" position={[0, 5, 5]} />
-      <ScrollControls pages={2}>
+      <ScrollControls pages={8}>
         <MeshCollection />
         <gridHelper args={[20, 40]} />
         <Scroll html>
