@@ -80,98 +80,80 @@ export default function PageContent() {
       <p>TODO</p>
       <h2>Leptons</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        The other set of particles that make up matter are Leptons. There are two types:
+        electrons which have a charge of -1, and neutrinos, which are electrically
+        neutral.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        As with quarks, left handed electrons and neutrinos interact via the weak force,
+        and can transform into one another through the exchange of a W boson. However,
+        right handed neutrinos have not been observed in nature.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        Leptons do not have a color charge and therefore do not participate in the strong
+        interaction. This is the primary feature distinguishing them form quarks.
       </p>
       <h2>Simplex Skeleton</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        Now we have what we need to form the skeleton of the double simplex model. The
+        left handed particles on the left, and right handed particles on the right.
       </p>
       <h2>Three Generations</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        Now for a complication. For unknown reasons, matter particles exist in three
+        generations, each getting progressively heavier. In addition to the up quark and
+        down quark, there is the charm quark and strange quark, and heavier still, top and
+        bottom quarks. They are otherwise identical in terms of other quantum properties.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        Left handed quarks occasionally interact with other left handed quarks of
+        different generations. So an up quark can emit a W boson and become a strange
+        quark rather than a bottom quark. Leptons have not been observed to have this type
+        of interaction between generations.
       </p>
       <h2>Electromagnetic Interaction</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        As stated before, all matter particles except for neutrinos have an electric
+        charge. Particles with an electric charge can interact through the electromagentic
+        force, of which the force carrier particle is the photon. Instead of changing into
+        a different form of the particle, the electromagnetic interaction is a push or
+        pull depending on the negativity of the charges involved.
+      </p>
+      <p>TODO</p>
+      <h2>Weak Neutral Interaction</h2>
+      <p>
+        There is another force carrier of the weak force beside the W+ and W- bosons. That
+        is Z0 boson, which has a neutral charge. Particles absorb or emmit Z0 bosons
+        without changing identities. It only changes the energy and momentum of the
+        particle. TODO - discuss diagram.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        The weak neutral interaction resembles the electromagnetic reaction because they
+        used to be the same force. In the beginning of the universe, there was the
+        electroweak force. As the early universe cooled, the force split into two in what
+        is known as the electroweak symmetry breaking. This event also caused a new field
+        to suddenly permeate spacetime, known as the Higgs Field. The carrier of which is
+        the Higgs Boson.
       </p>
       <h2>Mass and the Higgs Boson</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        The Higgs Boson brings the standard model together, and ties together left handed
+        and right handed particles. As particles interact with Higgs Bosons, they create
+        excitations in the Higgs field. These excitations are what imbue particles with
+        mass. In general, the more a particle interacts with the Higgs Field, the more
+        mass it has. The neutrino is the one exception to this, it has mass, but it is not
+        derived from interaction with the Higgs field.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        The Higgs interaction works generally like so. A left handed particle would be
+        travelling through space, and bumps into a Higgs boson. The particle might
+        ricochet and change in velocity and direction of travel. It might also become a
+        right handed particle after the interaction. Afterwards it might bump into a Higgs
+        boson again and become left handed once more, and so on. These interactions slow
+        down the particle, the extent of which this occurs being the mass of the particle.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita nihil
-        praesentium, autem aut obcaecati quae fuga facilis ex minus, temporibus incidunt
-        sunt ipsum enim at tempora nesciunt facere quaerat, laboriosam quia iste hic
-        reiciendis quis odio? Laboriosam id non distinctio.
+        TODO - quantum mixture.
       </p>
       <h2>The Complete Model</h2>
       <p>
